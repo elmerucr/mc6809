@@ -1,37 +1,44 @@
 /*
  * mc6809.hpp  -  part of mc6809
  *
- * (C)2021-2025 elmerucr
+ * (C)2021-2026 elmerucr
+ */
+
+
+/*
+ * mc6809 version 0.19 - 2026028
+ *
+ * Status us and sp swapped position
  */
 
 /*
- * MC6809 version 0.18 - 20251224
+ * mc6809 version 0.18 - 20251224
  *
  * Resolved bug: incorrect zero flag setting for leas and leau
  * Resolved bug: delete [] breakpoint_array (was without [])
  */
 
 /*
- * MC6809 version 0.17 - 20250519
+ * mc6809 version 0.17 - 20250519
  *
  * Status compacter
  */
 
  /*
- * MC6809 version 0.16 - 20250405
+ * mc6809 version 0.16 - 20250405
  *
  * Disassembler output includes spaces at the end of row + ',' removed at beginning
  */
 
 /*
- * MC6809 version 0.15 - 20250118
+ * mc6809 version 0.15 - 20250118
  *
  * Update to status function output
  * inactive NMI (after reset) displayed with '--' then with '0', '1', ...
  */
 
 /*
- * MC6809 version 0.14 - June 2024
+ * mc6809 version 0.14 - June 2024
  *
  * Implementation of the SYNC instruction
  * Missing: CWAI and illegal opcode exception implementation
@@ -43,7 +50,7 @@
  */
 
 /*
- * MC6809 version 0.9 - October 2021
+ * mc6809 version 0.9 - October 2021
  *
  * October 2021. Most functionality is in there. Currently missing:
  * - CWAI instruction
@@ -62,9 +69,9 @@
 #include <cstddef>
 
 #define MC6809_MAJOR_VERSION	0
-#define MC6809_MINOR_VERSION	18
-#define MC6809_BUILD		20251226
-#define MC6809_YEAR		2025
+#define MC6809_MINOR_VERSION	19
+#define MC6809_BUILD		20260228
+#define MC6809_YEAR		2026
 
 #define	C_FLAG	0x01	// carry
 #define	V_FLAG	0x02	// overflow

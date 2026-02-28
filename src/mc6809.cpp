@@ -1,7 +1,7 @@
 /*
  * mc6809.cpp  -  part of mc6809
  *
- * (C)2021-2025 elmerucr
+ * (C)2021-2026 elmerucr
  */
 
 #include "mc6809.hpp"
@@ -233,14 +233,14 @@ void mc6809::illegal_opcode()
  */
 void mc6809::status(char *text_buffer, int n)
 {
-	snprintf(text_buffer, n, " pc  dp ac br  xr   yr   us   sp  efhinzvc  N F I cpu\n"
+	snprintf(text_buffer, n, " pc  dp ac br  xr   yr   sp   us  efhinzvc  N F I cpu\n"
 			"%04x %02x %02x:%02x "
 			"%04x %04x %04x %04x "
 			"%c%c%c%c%c%c%c%c "
 			"%c%c %c %c "
 			"%s",
 			pc, dp, ac, br,
-			xr, yr, us, sp,
+			xr, yr, sp, us,
 			cc & E_FLAG ? '*' : '-',
 			cc & F_FLAG ? '*' : '-',
 			cc & H_FLAG ? '*' : '-',
