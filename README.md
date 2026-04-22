@@ -6,15 +6,22 @@
 
 A library written in C++ that emulates the mc6809 cpu. The enclosed ```CMakeLists.txt``` file (standard cmake procedure) will build the library and a small test application. To use this library in your project, copy the five source files from ```./src/``` into your source tree.
 
-The following instruction is not yet implemented:
-* CWAI opcode
+The following opcode is not yet implemented:
+* CWAI
 
-To be implemented (with a switch in the source code), a feature from the Hitachi 6309:
-* illegal opcode exceptions (vector at $fff0)
+A feature from the Hitachi 6309 that might be implemented (with a switch in the source code):
+* illegal opcode exception (vector at $fff0)
 
 At this point it's unclear to me how many cycles the NMI, FIRQ and IRQ exceptions consume. I made a guess for 19, 10 and 19 cycles respectively.
 
-To reduce the CPU load on the host system when the the 6809 cpu is idle (after a SYNC or CWAI instruction), this status consumes 50 cycles. Feel free to change following lines in ```mc6809.hpp```:
+To reduce the CPU load on the host system when the the 6809 cpu is idle (after a SYNC or CWAI instruction), 50 cycles are taken for each call to:
+
+```cpp
+uint16_t mc6809::execute()
+```
+
+Feel free to change following lines in ```mc6809.hpp```:
+
 ```cpp
 #define SYNC_CYCLES	50
 #define CWAI_CYCLES	50
@@ -77,6 +84,7 @@ Running more that one instruction or the ability to run ```N``` cycles has been 
 * [VICE](http://vice-emu.sourceforge.net) - The Versatile Commodore Emulator.
 * [VirtualC64](https://dirkwhoffmann.github.io/virtualc64/) - A Commodore 64 on your Apple Macintosh by Dirk W. Hoffmann.
 * [vlink](http://sun.hasenbraten.de/vlink/) - A versatile linker by Frank Wille.
+* [vrEmu6502](https://github.com/visrealm/vrEmu6502) - 6502/65C02 emulator library (C99).
 
 ## References
 
