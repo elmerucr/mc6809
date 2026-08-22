@@ -6,7 +6,7 @@
 
 
 /*
- * mc6809 version 0.19 - 2026028
+ * mc6809 version 0.19 - 20260228
  *
  * Status us and sp swapped position
  */
